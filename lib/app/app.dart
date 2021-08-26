@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:teste_tecnico_03_escribo_inovacao/app/theme/app_theme.dart';
 
 import 'router/app_routes.dart';
 
@@ -8,9 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Star Wars App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: AppTheme.theme,
       routes: AppRoutes.routes,
     );
   }
