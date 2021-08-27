@@ -1,44 +1,39 @@
 import '../../constants/constants.dart';
+import '../../star_wars_item/model/star_wars_item.dart';
 
 /// [Movie] is a class to model the movie data retrieved from the API.
-class Movie {
-  /// The [title] of the movie.
-  final String title;
-
-  /// [episodeId] is an integer that references the series episode which this
-  /// movie represents.
-  final int episodeId;
-
-  /// The [director] of the movie.
-  final String director;
-
-  /// The [releaseDate] of the movie.
-  final DateTime releaseDate;
-
+class Movie extends StarWarsItem {
   /// [Movie] is the default constructor for a movie.
   Movie({
-    required this.title,
-    required this.episodeId,
-    required this.director,
-    required this.releaseDate,
-  });
+    required String title,
+    bool? isFavorite,
+  }) : super(
+          title: title,
+          type: ItemType.movie,
+          isFavorite: isFavorite ?? false,
+        );
 
   /// [Movie] constructor from a map with the correct keys.
   /// Returns a new [Movie] instance each time.
   factory Movie.fromMap(Map<String, dynamic> map) {
+    late bool isFavorite;
+
+    if (map[AppConstants.isFavoriteAttribute] == null ||
+        map[AppConstants.isFavoriteAttribute] == 'false') {
+      isFavorite = false;
+    } else {
+      isFavorite = true;
+    }
+
     return Movie(
       title: map[AppConstants.titleAttribute] as String,
-      episodeId: map[AppConstants.episodeIdJson] as int,
-      director: map[AppConstants.directorAttribute] as String,
-      releaseDate: DateTime.parse(
-        map[AppConstants.releaseDateJson] as String,
-      ),
+      isFavorite: isFavorite,
     );
   }
 
   @override
   String toString() {
-    return 'Movie(title: $title, episodeId: $episodeId, director: $director, releaseDate: $releaseDate)';
+    return 'Movie(title: $title, type: $type, isFavorite: $isFavorite)';
   }
 
   @override
@@ -47,16 +42,12 @@ class Movie {
 
     return other is Movie &&
         other.title == title &&
-        other.episodeId == episodeId &&
-        other.director == director &&
-        other.releaseDate == releaseDate;
+        other.type == type &&
+        other.isFavorite == isFavorite;
   }
 
   @override
   int get hashCode {
-    return title.hashCode ^
-        episodeId.hashCode ^
-        director.hashCode ^
-        releaseDate.hashCode;
+    return title.hashCode ^ type.hashCode ^ isFavorite.hashCode;
   }
 }

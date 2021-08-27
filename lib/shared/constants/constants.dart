@@ -7,18 +7,9 @@ class AppConstants {
   /// Redirects to the string 'title'.
   static const titleAttribute = 'title';
 
-  /// Redirects to the string 'episodeId'.
-  static const episodeIdAttribute = 'episodeId';
+  /// Redirects to the string 'itemType'
+  static const typeAttribute = 'itemType';
 
-  /// Redirects to the string 'episode_id'.
-  static const episodeIdJson = 'episode_id';
-
-  /// Redirects to the string 'director'.
-  static const directorAttribute = 'director';
-
-  /// Redirects to the string 'releaseDate'.
-  static const releaseDateAttribute = 'releaseDate';
-
-  /// Redirects to the string 'release_date'.
-  static const releaseDateJson = 'release_date';
+  /// Redirects to the string 'isFavorite'
+  static const isFavoriteAttribute = 'isFavorite';
 }
