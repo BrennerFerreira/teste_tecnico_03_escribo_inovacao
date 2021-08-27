@@ -5,8 +5,8 @@ import '../../../../../../shared/movie/model/movie.dart';
 import '../../../shared/dio_config/dio_config.dart';
 import '../i_movies_services.dart';
 
-/// [DioMoviesServices] is a class that encapsulates all API requests using
-/// the [Dio] package.
+/// [DioMoviesServices] is a class that implements the [IMoviesService]
+/// interface and encapsulates all API requests using the [Dio] package.
 @Injectable(as: IMoviesServices)
 class DioMoviesServices implements IMoviesServices {
   /// The [DioConfig] to make the requests.
