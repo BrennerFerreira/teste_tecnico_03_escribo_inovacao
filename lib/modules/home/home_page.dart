@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const totalTabs = 3;
-    const appBarHeight = 168.0;
+    const appBarHeight = 144.0;
 
     return DefaultTabController(
       length: totalTabs,
@@ -18,6 +18,13 @@ class HomePage extends StatelessWidget {
           toolbarHeight: appBarHeight,
           title: AppBarTitle(),
           bottom: const AppBarBottom(appBarHeight: appBarHeight),
+        ),
+        body: TabBarView(
+          children: [
+            Container(color: Colors.red),
+            Container(color: Colors.blue),
+            Container(color: Colors.green),
+          ],
         ),
       ),
     );
