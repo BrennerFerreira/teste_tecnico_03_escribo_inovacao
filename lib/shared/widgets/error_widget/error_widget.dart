@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../app/theme/app_text_styles.dart';
+
 /// [ErrorTextWidget] is used every time there is an error while fetching data
 /// from the API.
 class ErrorTextWidget extends StatelessWidget {
@@ -9,6 +11,8 @@ class ErrorTextWidget extends StatelessWidget {
       child: Text(
         "Erro ao recuperar os dados do servidor. "
         "Por favor, tente novamente.",
+        style: AppTextStyles.textRegular,
+        textAlign: TextAlign.center,
       ),
     );
   }
