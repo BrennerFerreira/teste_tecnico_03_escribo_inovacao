@@ -12,4 +12,10 @@ class AppConstants {
 
   /// Redirects to the string 'isFavorite'
   static const isFavoriteAttribute = 'isFavorite';
+
+  /// Redirects to the string 'name'
+  static const nameAttribute = 'name';
+
+  /// Redirects to the string 'results'
+  static const resultsString = 'results';
 }
