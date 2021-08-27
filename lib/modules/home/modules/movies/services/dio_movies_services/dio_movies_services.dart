@@ -3,6 +3,7 @@ import 'package:injectable/injectable.dart';
 
 import '../../../../../../shared/movie/model/movie.dart';
 import '../../../shared/dio_config/dio_config.dart';
+import '../../../shared/services/convert_api_response.dart';
 import '../i_movies_services.dart';
 
 /// [DioMoviesServices] is a class that implements the [IMoviesService]
@@ -20,23 +21,17 @@ class DioMoviesServices implements IMoviesServices {
 
   @override
   Future<List<Movie>> getAllMovies() async {
+    Movie fromMapFunction(Map<String, dynamic> map) => Movie.fromMap(map);
     const moviesPath = 'films';
     try {
-      final response = await _client.get(
-        moviesPath,
-      );
+      final response = await _client.get(moviesPath);
 
       final resultsString = response.data["results"];
 
-      final resultsList = List.castFrom<dynamic, Map<String, dynamic>>(
-        resultsString as List,
+      final moviesList = ConvertApiResponses.convertResponse<Movie>(
+        jsonList: resultsString as List,
+        fromMapFunction: fromMapFunction,
       );
-
-      final moviesList = resultsList
-          .map(
-            (movieMap) => Movie.fromMap(movieMap),
-          )
-          .toList();
 
       return moviesList;
     } on DioError {
