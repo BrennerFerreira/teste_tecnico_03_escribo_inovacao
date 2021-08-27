@@ -24,11 +24,17 @@ class MoviesList extends StatelessWidget {
                 return ErrorTextWidget();
               }
 
-              return ListView.builder(
-                itemCount: state.movies.length,
-                itemBuilder: (context, index) {
-                  return MovieTile(movie: state.movies[index]);
-                },
+              return Padding(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 16.0,
+                  horizontal: 8.0,
+                ),
+                child: ListView.builder(
+                  itemCount: state.movies.length,
+                  itemBuilder: (context, index) {
+                    return MovieTile(movie: state.movies[index]);
+                  },
+                ),
               );
             },
           );
