@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:teste_tecnico_03_escribo_inovacao/modules/home/modules/movies/movies_list.dart';
 
 import 'widgets/app_bar_bottom/app_bar_bottom.dart';
 import 'widgets/app_bar_title/app_bar_title.dart';
@@ -21,7 +22,7 @@ class HomePage extends StatelessWidget {
         ),
         body: TabBarView(
           children: [
-            Container(color: Colors.red),
+            MoviesList(),
             Container(color: Colors.blue),
             Container(color: Colors.green),
           ],

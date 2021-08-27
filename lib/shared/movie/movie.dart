@@ -44,10 +44,10 @@ class Movie {
   factory Movie.fromMap(Map<String, dynamic> map) {
     return Movie(
       title: map[AppConstants.titleAttribute] as String,
-      episodeId: map[AppConstants.episodeIdAttribute] as int,
+      episodeId: map[AppConstants.episodeIdJson] as int,
       director: map[AppConstants.directorAttribute] as String,
       releaseDate: DateTime.parse(
-        map[AppConstants.releaseDateAttribute] as String,
+        map[AppConstants.releaseDateJson] as String,
       ),
     );
   }

@@ -20,15 +20,25 @@ class DioMoviesServices implements IMoviesServices {
 
   @override
   Future<List<Movie>> getAllMovies() async {
-    const moviesPath = '/movies';
-
+    const moviesPath = 'films';
     try {
       final response = await _client.get(
         moviesPath,
       );
 
-      print(response.data);
-      return [];
+      final resultsString = response.data["results"];
+
+      final resultsList = List.castFrom<dynamic, Map<String, dynamic>>(
+        resultsString as List,
+      );
+
+      final moviesList = resultsList
+          .map(
+            (movieMap) => Movie.fromMap(movieMap),
+          )
+          .toList();
+
+      return moviesList;
     } on DioError {
       return [];
     }
