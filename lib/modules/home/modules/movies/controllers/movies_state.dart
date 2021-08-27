@@ -42,7 +42,7 @@ class FetchDoneMoviesState extends MoviesState {
   const FetchDoneMoviesState({
     required List<Movie> movies,
   }) : super(
-          isLoading: true,
+          isLoading: false,
           movies: movies,
         );
 }

@@ -1,4 +1,4 @@
-import 'package:teste_tecnico_03_escribo_inovacao/shared/movie/movie.dart';
+import 'package:teste_tecnico_03_escribo_inovacao/shared/movie/model/movie.dart';
 
 /// [IMoviesServices] is an interface to all external requests for the movies
 /// list tab.

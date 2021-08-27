@@ -1,4 +1,4 @@
-import '../constants/constants.dart';
+import '../../constants/constants.dart';
 
 /// [Movie] is a class to model the movie data retrieved from the API.
 class Movie {

@@ -5,7 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
-import '../../../../../shared/movie/movie.dart';
+import '../../../../../shared/movie/model/movie.dart';
 import '../services/i_movies_services.dart';
 
 part 'movies_event.dart';
