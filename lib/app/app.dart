@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:teste_tecnico_03_escribo_inovacao/app/theme/app_theme.dart';
 
 import 'router/app_routes.dart';
+import 'theme/app_theme.dart';
 
 /// MyApp initializes the app setting the theme and routes.
 class MyApp extends StatelessWidget {

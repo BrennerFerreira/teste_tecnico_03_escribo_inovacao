@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:teste_tecnico_03_escribo_inovacao/app/theme/app_colors.dart';
 
+import '../../../../../../app/theme/app_colors.dart';
 import '../../../../../../app/theme/app_text_styles.dart';
 import '../../../../../../shared/movie/model/movie.dart';
 import 'widgets/tile_container/tile_container.dart';
