@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import '../constants/constants.dart';
 
 /// [Movie] is a class to model the movie data retrieved from the API.
@@ -25,20 +23,6 @@ class Movie {
     required this.releaseDate,
   });
 
-  Movie copyWith({
-    String? title,
-    int? episodeId,
-    String? director,
-    DateTime? releaseDate,
-  }) {
-    return Movie(
-      title: title ?? this.title,
-      episodeId: episodeId ?? this.episodeId,
-      director: director ?? this.director,
-      releaseDate: releaseDate ?? this.releaseDate,
-    );
-  }
-
   /// [Movie] constructor from a map with the correct keys.
   /// Returns a new [Movie] instance each time.
   factory Movie.fromMap(Map<String, dynamic> map) {
@@ -51,12 +35,6 @@ class Movie {
       ),
     );
   }
-
-  /// [Movie] constructor from a JSON containing the correct keys.
-  /// Returns a new [Movie] instance each time.
-  factory Movie.fromJson(String source) => Movie.fromMap(
-        json.decode(source) as Map<String, dynamic>,
-      );
 
   @override
   String toString() {
