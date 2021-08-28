@@ -8,10 +8,14 @@ class AppBarTitle extends StatelessWidget {
   /// The function that will be called when the website button is pressed.
   final VoidCallback onWebsiteButtonPressed;
 
+  /// The background of the website button.
+  final Color websiteButtonBackgroundColor;
+
   /// Default constructor for this class;
   const AppBarTitle({
     Key? key,
     required this.onWebsiteButtonPressed,
+    required this.websiteButtonBackgroundColor,
   }) : super(key: key);
 
   @override
@@ -21,6 +25,7 @@ class AppBarTitle extends StatelessWidget {
       children: [
         WebsiteButton(
           onPressed: onWebsiteButtonPressed,
+          backgroundColor: websiteButtonBackgroundColor,
         ),
         CircleAvatar(
           child: Container(

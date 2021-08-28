@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:teste_tecnico_03_escribo_inovacao/app/theme/app_colors.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import '../../app/router/route_names.dart';
@@ -39,6 +40,7 @@ class _OfficialWebsitePageState extends State<OfficialWebsitePage> {
               (route) => route.settings.name == RouteNames.homeRoute,
             );
           },
+          websiteButtonBackgroundColor: AppColors.backgroundColor,
         ),
       ),
       body: Column(

@@ -10,8 +10,15 @@ class WebsiteButton extends StatelessWidget {
   /// The function that will be called when this button is pressed by the user.
   final VoidCallback onPressed;
 
+  /// The color used in the background of this button.
+  final Color backgroundColor;
+
   /// Default constructor for this class.
-  const WebsiteButton({Key? key, required this.onPressed}) : super(key: key);
+  const WebsiteButton({
+    Key? key,
+    required this.onPressed,
+    required this.backgroundColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,15 +27,13 @@ class WebsiteButton extends StatelessWidget {
       child: SizedBox(
         height: 64,
         width: 136,
-        child: ClipRRect(
-          child: CustomPaint(
-            painter: ParallelogramShape(),
-            child: const Center(
-              child: Text(
-                AppConstants.website,
-                style: AppTextStyles.textRegular,
-                softWrap: false,
-              ),
+        child: CustomPaint(
+          painter: ParallelogramShape(backgroundColor),
+          child: const Center(
+            child: Text(
+              AppConstants.website,
+              style: AppTextStyles.textRegular,
+              softWrap: false,
             ),
           ),
         ),

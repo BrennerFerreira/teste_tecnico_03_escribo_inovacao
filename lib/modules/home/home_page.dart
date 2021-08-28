@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:teste_tecnico_03_escribo_inovacao/app/theme/app_colors.dart';
 import 'package:teste_tecnico_03_escribo_inovacao/modules/home/modules/favorites/favorites_list.dart';
 
 import '../../app/router/route_names.dart';
@@ -24,6 +25,7 @@ class HomePage extends StatelessWidget {
             onWebsiteButtonPressed: () {
               Navigator.of(context).pushNamed(RouteNames.websiteRoute);
             },
+            websiteButtonBackgroundColor: AppColors.accentColor,
           ),
           bottom: const AppBarBottom(appBarHeight: appBarHeight),
         ),
