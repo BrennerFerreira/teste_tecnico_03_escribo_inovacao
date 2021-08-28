@@ -24,4 +24,10 @@ class AppConstants {
 
   /// Redirects to the string 'id'
   static const idString = 'id';
+
+  /// Redirects to the double 144.0;
+  static const fullAppBarHeight = 144.0;
+
+  /// Redirects to the double 124.0;
+  static const smallAppBarHeight = 124.0;
 }

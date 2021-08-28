@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:teste_tecnico_03_escribo_inovacao/app/theme/app_colors.dart';
-import 'package:teste_tecnico_03_escribo_inovacao/modules/home/modules/favorites/favorites_list.dart';
 
 import '../../app/router/route_names.dart';
+import '../../app/theme/app_colors.dart';
+import '../../shared/constants/constants.dart';
 import '../../shared/widgets/app_bar_title/app_bar_title.dart';
 import 'modules/characters/characters_list.dart';
+import 'modules/favorites/favorites_list.dart';
 import 'modules/movies/movies_list.dart';
 import 'widgets/app_bar_bottom/app_bar_bottom.dart';
 
@@ -14,20 +15,19 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const totalTabs = 3;
-    const appBarHeight = 144.0;
 
     return DefaultTabController(
       length: totalTabs,
       child: Scaffold(
         appBar: AppBar(
-          toolbarHeight: appBarHeight,
+          toolbarHeight: AppConstants.fullAppBarHeight,
           title: AppBarTitle(
             onWebsiteButtonPressed: () {
               Navigator.of(context).pushNamed(RouteNames.websiteRoute);
             },
             websiteButtonBackgroundColor: AppColors.accentColor,
           ),
-          bottom: const AppBarBottom(appBarHeight: appBarHeight),
+          bottom: AppBarBottom(),
         ),
         body: TabBarView(
           children: [

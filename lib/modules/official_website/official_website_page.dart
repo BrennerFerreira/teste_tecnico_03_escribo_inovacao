@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:teste_tecnico_03_escribo_inovacao/app/theme/app_colors.dart';
+import 'package:teste_tecnico_03_escribo_inovacao/shared/constants/constants.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import '../../app/router/route_names.dart';
@@ -27,12 +28,11 @@ class _OfficialWebsitePageState extends State<OfficialWebsitePage> {
 
   @override
   Widget build(BuildContext context) {
-    const appBarHeight = 120.0;
     const websiteUrl = 'https://www.starwars.com/community';
 
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: appBarHeight,
+        toolbarHeight: AppConstants.smallAppBarHeight,
         automaticallyImplyLeading: false,
         title: AppBarTitle(
           onWebsiteButtonPressed: () {
