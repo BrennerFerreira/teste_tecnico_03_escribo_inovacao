@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../injection.dart';
-import '../../../../shared/character/model/character.dart';
+import '../../../../shared/star_wars_item/models/character.dart';
 import '../shared/widgets/base_list/base_list.dart';
 import '../shared/widgets/base_list_tile/base_list_tile.dart';
 import 'controllers/characters_bloc.dart';

@@ -5,8 +5,8 @@ import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
-import '../../../../../shared/character/model/character.dart';
 import '../../../../../shared/favorites/controllers/favorites_bloc.dart';
+import '../../../../../shared/star_wars_item/models/character.dart';
 import '../services/i_characters_services.dart';
 
 part 'characters_event.dart';

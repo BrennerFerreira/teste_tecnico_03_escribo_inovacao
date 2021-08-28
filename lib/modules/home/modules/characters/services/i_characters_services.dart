@@ -1,4 +1,4 @@
-import '../../../../../shared/character/model/character.dart';
+import '../../../../../shared/star_wars_item/models/character.dart';
 
 /// [ICharactersServices] is an interface to all external requests for the
 /// characters list tab.

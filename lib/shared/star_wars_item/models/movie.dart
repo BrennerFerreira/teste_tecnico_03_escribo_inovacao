@@ -1,21 +1,21 @@
 import '../../constants/constants.dart';
-import '../../star_wars_item/model/star_wars_item.dart';
+import 'star_wars_item.dart';
 
-/// [Character] is a class to model the Character data retrieved from the API.
-class Character extends StarWarsItem {
-  /// [Character] is the default constructor for a Character.
-  Character({
+/// [Movie] is a class to model the movie data retrieved from the API.
+class Movie extends StarWarsItem {
+  /// [Movie] is the default constructor for a movie.
+  Movie({
     required String title,
     bool? isFavorite,
   }) : super(
           title: title,
-          type: ItemType.character,
+          type: ItemType.movie,
           isFavorite: isFavorite ?? false,
         );
 
-  /// [Character] constructor from a map with the correct keys.
-  /// Returns a new [Character] instance each time.
-  factory Character.fromMap(Map<String, dynamic> map) {
+  /// [Movie] constructor from a map with the correct keys.
+  /// Returns a new [Movie] instance each time.
+  factory Movie.fromMap(Map<String, dynamic> map) {
     late bool isFavorite;
 
     if (map[AppConstants.isFavoriteAttribute] == null ||
@@ -25,23 +25,22 @@ class Character extends StarWarsItem {
       isFavorite = true;
     }
 
-    return Character(
-      title: (map[AppConstants.nameAttribute] ??
-          map[AppConstants.titleAttribute]) as String,
+    return Movie(
+      title: map[AppConstants.titleAttribute] as String,
       isFavorite: isFavorite,
     );
   }
 
   @override
   String toString() {
-    return 'Character(title: $title, type: $type, isFavorite: $isFavorite)';
+    return 'Movie(title: $title, type: $type, isFavorite: $isFavorite)';
   }
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
-    return other is Character &&
+    return other is Movie &&
         other.title == title &&
         other.type == type &&
         other.isFavorite == isFavorite;
@@ -54,6 +53,6 @@ class Character extends StarWarsItem {
 
   @override
   StarWarsItem invertFavorite() {
-    return Character(title: title, isFavorite: !isFavorite);
+    return Movie(title: title, isFavorite: !isFavorite);
   }
 }

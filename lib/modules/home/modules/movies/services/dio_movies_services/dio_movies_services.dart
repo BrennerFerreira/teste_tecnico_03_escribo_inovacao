@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../../../../shared/movie/model/movie.dart';
+import '../../../../../../shared/star_wars_item/models/movie.dart';
 import '../../../shared/dio_config/dio_config.dart';
 import '../../../shared/services/convert_api_response.dart';
 import '../i_movies_services.dart';

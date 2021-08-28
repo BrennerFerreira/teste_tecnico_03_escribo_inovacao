@@ -5,7 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
-import '../../star_wars_item/model/star_wars_item.dart';
+import '../../star_wars_item/models/star_wars_item.dart';
 import '../services/favorites_services.dart';
 
 part 'favorites_event.dart';

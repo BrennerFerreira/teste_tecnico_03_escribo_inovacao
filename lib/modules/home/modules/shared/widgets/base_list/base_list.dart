@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../shared/star_wars_item/model/star_wars_item.dart';
+import '../../../../../../shared/star_wars_item/models/star_wars_item.dart';
 import '../../../../../../shared/widgets/error_widget/error_widget.dart';
 import '../../../../../../shared/widgets/loading_widget/loading_widget.dart';
 import '../base_list_tile/base_list_tile.dart';

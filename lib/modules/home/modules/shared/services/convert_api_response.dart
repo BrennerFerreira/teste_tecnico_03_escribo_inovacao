@@ -1,4 +1,4 @@
-import '../../../../../shared/star_wars_item/model/star_wars_item.dart';
+import '../../../../../shared/star_wars_item/models/star_wars_item.dart';
 
 /// [ConvertApiResponses] is a helper class to convert the raw JSON response
 /// to a list of [StarWarsItem].

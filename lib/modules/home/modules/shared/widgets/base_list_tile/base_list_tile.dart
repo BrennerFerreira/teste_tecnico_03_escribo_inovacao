@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../app/theme/app_colors.dart';
 import '../../../../../../app/theme/app_text_styles.dart';
 import '../../../../../../shared/favorites/controllers/favorites_bloc.dart';
-import '../../../../../../shared/star_wars_item/model/star_wars_item.dart';
+import '../../../../../../shared/star_wars_item/models/star_wars_item.dart';
 import '../tile_container/tile_container.dart';
 
 /// [BaseListTile] creates a list tile with the movie information provided.

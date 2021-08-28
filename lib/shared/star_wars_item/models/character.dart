@@ -1,21 +1,21 @@
 import '../../constants/constants.dart';
-import '../../star_wars_item/model/star_wars_item.dart';
+import 'star_wars_item.dart';
 
-/// [Movie] is a class to model the movie data retrieved from the API.
-class Movie extends StarWarsItem {
-  /// [Movie] is the default constructor for a movie.
-  Movie({
+/// [Character] is a class to model the Character data retrieved from the API.
+class Character extends StarWarsItem {
+  /// [Character] is the default constructor for a Character.
+  Character({
     required String title,
     bool? isFavorite,
   }) : super(
           title: title,
-          type: ItemType.movie,
+          type: ItemType.character,
           isFavorite: isFavorite ?? false,
         );
 
-  /// [Movie] constructor from a map with the correct keys.
-  /// Returns a new [Movie] instance each time.
-  factory Movie.fromMap(Map<String, dynamic> map) {
+  /// [Character] constructor from a map with the correct keys.
+  /// Returns a new [Character] instance each time.
+  factory Character.fromMap(Map<String, dynamic> map) {
     late bool isFavorite;
 
     if (map[AppConstants.isFavoriteAttribute] == null ||
@@ -25,22 +25,23 @@ class Movie extends StarWarsItem {
       isFavorite = true;
     }
 
-    return Movie(
-      title: map[AppConstants.titleAttribute] as String,
+    return Character(
+      title: (map[AppConstants.nameAttribute] ??
+          map[AppConstants.titleAttribute]) as String,
       isFavorite: isFavorite,
     );
   }
 
   @override
   String toString() {
-    return 'Movie(title: $title, type: $type, isFavorite: $isFavorite)';
+    return 'Character(title: $title, type: $type, isFavorite: $isFavorite)';
   }
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
-    return other is Movie &&
+    return other is Character &&
         other.title == title &&
         other.type == type &&
         other.isFavorite == isFavorite;
@@ -53,6 +54,6 @@ class Movie extends StarWarsItem {
 
   @override
   StarWarsItem invertFavorite() {
-    return Movie(title: title, isFavorite: !isFavorite);
+    return Character(title: title, isFavorite: !isFavorite);
   }
 }

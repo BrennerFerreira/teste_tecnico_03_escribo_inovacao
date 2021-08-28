@@ -6,7 +6,7 @@ import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
 import '../../../../../shared/favorites/controllers/favorites_bloc.dart';
-import '../../../../../shared/movie/model/movie.dart';
+import '../../../../../shared/star_wars_item/models/movie.dart';
 import '../services/i_movies_services.dart';
 
 part 'movies_event.dart';
