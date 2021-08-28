@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../app/router/route_names.dart';
 import 'modules/characters/characters_list.dart';
 import 'modules/movies/movies_list.dart';
 import 'widgets/app_bar_bottom/app_bar_bottom.dart';
@@ -18,7 +19,11 @@ class HomePage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           toolbarHeight: appBarHeight,
-          title: AppBarTitle(),
+          title: AppBarTitle(
+            onWebsiteButtonPressed: () {
+              Navigator.of(context).pushNamed(RouteNames.websiteRoute);
+            },
+          ),
           bottom: const AppBarBottom(appBarHeight: appBarHeight),
         ),
         body: TabBarView(
