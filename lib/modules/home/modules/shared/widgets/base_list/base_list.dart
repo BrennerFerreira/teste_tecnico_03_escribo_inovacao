@@ -13,11 +13,15 @@ class BaseList extends StatelessWidget {
   /// The list to be displayed on the UI.
   final List<StarWarsItem> list;
 
+  /// Used if there is need for a custom render of a list view.
+  final ListView? listView;
+
   /// Default constructor for this class.
   const BaseList({
     Key? key,
     required this.isLoading,
     required this.list,
+    this.listView,
   }) : super(key: key);
 
   @override
@@ -33,12 +37,13 @@ class BaseList extends StatelessWidget {
         vertical: 16.0,
         horizontal: 8.0,
       ),
-      child: ListView.builder(
-        itemCount: list.length,
-        itemBuilder: (context, index) {
-          return BaseListTile(item: list[index]);
-        },
-      ),
+      child: listView ??
+          ListView.builder(
+            itemCount: list.length,
+            itemBuilder: (context, index) {
+              return BaseListTile(item: list[index]);
+            },
+          ),
     );
   }
 }

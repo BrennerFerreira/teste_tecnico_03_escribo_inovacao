@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:teste_tecnico_03_escribo_inovacao/modules/home/modules/characters/widgets/loading_list_tile/loading_list_tile.dart';
-import 'package:teste_tecnico_03_escribo_inovacao/modules/home/modules/shared/widgets/base_list_tile/base_list_tile.dart';
 
 import '../../../../injection.dart';
+import '../shared/widgets/base_list/base_list.dart';
+import '../shared/widgets/base_list_tile/base_list_tile.dart';
 import 'controllers/characters_bloc.dart';
+import 'widgets/loading_list_tile/loading_list_tile.dart';
 
 /// [CharactersList] is used as the [HomePage] scaffold body when the
 /// "Personagens" tab is selected.
@@ -27,21 +28,25 @@ class _CharactersListState extends State<CharactersList>
         builder: (context) {
           return BlocBuilder<CharactersBloc, CharactersState>(
             builder: (context, state) {
-              return ListView.builder(
-                itemCount: state.isLastPage
-                    ? state.characters.length
-                    : state.characters.length + 1,
-                itemBuilder: (context, index) {
-                  if (index == state.characters.length) {
-                    context.read<CharactersBloc>().add(
-                          NewPageRequestCharactersEvent(),
-                        );
+              return BaseList(
+                isLoading: state.isLoading,
+                list: state.characters,
+                listView: ListView.builder(
+                  itemCount: state.isLastPage
+                      ? state.characters.length
+                      : state.characters.length + 1,
+                  itemBuilder: (context, index) {
+                    if (index == state.characters.length) {
+                      context.read<CharactersBloc>().add(
+                            NewPageRequestCharactersEvent(),
+                          );
 
-                    return LoadingListTile();
-                  }
+                      return LoadingListTile();
+                    }
 
-                  return BaseListTile(item: state.characters[index]);
-                },
+                    return BaseListTile(item: state.characters[index]);
+                  },
+                ),
               );
             },
           );
