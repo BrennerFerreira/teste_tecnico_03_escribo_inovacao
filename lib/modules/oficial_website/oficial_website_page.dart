@@ -22,6 +22,8 @@ class _OficialWebsitePageState extends State<OficialWebsitePage> {
     }
   }
 
+  bool _isLoading = true;
+
   @override
   Widget build(BuildContext context) {
     const appBarHeight = 120.0;
@@ -39,7 +41,26 @@ class _OficialWebsitePageState extends State<OficialWebsitePage> {
           },
         ),
       ),
-      body: const WebView(initialUrl: websiteUrl),
+      body: Column(
+        children: [
+          if (_isLoading) const LinearProgressIndicator(),
+          Expanded(
+            child: WebView(
+              initialUrl: websiteUrl,
+              onPageStarted: (_) {
+                setState(() {
+                  _isLoading = true;
+                });
+              },
+              onPageFinished: (_) {
+                setState(() {
+                  _isLoading = false;
+                });
+              },
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
