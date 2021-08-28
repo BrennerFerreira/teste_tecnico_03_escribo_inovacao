@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttermoji/fluttermoji.dart';
 
 import '../../app/router/route_names.dart';
 import '../../app/theme/app_colors.dart';
@@ -27,8 +28,15 @@ class AvatarPage extends StatelessWidget {
           },
         ),
       ),
-      body: const Center(
-        child: Text("Avatar"),
+      body: Column(
+        children: [
+          FluttermojiCircleAvatar(
+            backgroundColor: AppColors.accentColor.withOpacity(0.5),
+          ),
+          FluttermojiCustomizer(
+            outerTitleText: "Customize seu avatar:",
+          ),
+        ],
       ),
     );
   }
