@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../injection.dart';
+import '../../../../shared/character/model/character.dart';
 import '../shared/widgets/base_list/base_list.dart';
 import '../shared/widgets/base_list_tile/base_list_tile.dart';
 import 'controllers/characters_bloc.dart';
@@ -47,7 +48,9 @@ class _CharactersListState extends State<CharactersList>
                     return BaseListTile(
                       item: state.characters[index],
                       invertFavoriteFunction: (item) {
-                        print(item);
+                        context.read<CharactersBloc>().add(
+                              InvertFavoriteCharactersEvent(item as Character),
+                            );
                       },
                     );
                   },
