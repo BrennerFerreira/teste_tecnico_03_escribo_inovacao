@@ -24,4 +24,14 @@ abstract class IDatabaseServices {
     required String tableName,
     required String title,
   });
+
+  /// [getAllData] receive one arguments:
+  ///
+  /// [tableName]: a string with the table name where to retrieve the data.
+  ///
+  /// Returns: a [List] of the items retrieved if no error occurs and [null]
+  /// otherwise.
+  Future<List<Map<String, dynamic>>?> getAllData({
+    required String tableName,
+  });
 }

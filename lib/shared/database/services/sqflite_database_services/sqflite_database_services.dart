@@ -46,4 +46,19 @@ class SqfliteDatabaseServices implements IDatabaseServices {
       return false;
     }
   }
+
+  @override
+  Future<List<Map<String, dynamic>>?> getAllData({
+    required String tableName,
+  }) async {
+    try {
+      final database = await _database();
+
+      final results = await database.query(tableName);
+
+      return results;
+    } on Exception {
+      return null;
+    }
+  }
 }
