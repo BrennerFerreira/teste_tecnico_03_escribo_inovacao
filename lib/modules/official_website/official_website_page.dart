@@ -35,12 +35,16 @@ class _OfficialWebsitePageState extends State<OfficialWebsitePage> {
         toolbarHeight: AppConstants.smallAppBarHeight,
         automaticallyImplyLeading: false,
         title: AppBarTitle(
+          websiteButtonBackgroundColor: AppColors.backgroundColor,
+          avatarButtonBackgroundColor: AppColors.accentColor.withOpacity(0.5),
           onWebsiteButtonPressed: () {
             Navigator.of(context).popUntil(
               (route) => route.settings.name == RouteNames.homeRoute,
             );
           },
-          websiteButtonBackgroundColor: AppColors.backgroundColor,
+          onAvatarButtonPressed: () {
+            Navigator.of(context).pushReplacementNamed(RouteNames.avatarRoute);
+          },
         ),
       ),
       body: Column(

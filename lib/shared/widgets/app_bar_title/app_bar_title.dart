@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'widgets/avatar_button/avatar_button.dart';
 import 'widgets/website_button/website_button.dart';
 
 /// [AppBarTitle] is the widget responsible to show the website button and
@@ -11,11 +12,19 @@ class AppBarTitle extends StatelessWidget {
   /// The background of the website button.
   final Color websiteButtonBackgroundColor;
 
+  /// The function that will be called when the avatar button is pressed.
+  final VoidCallback onAvatarButtonPressed;
+
+  /// The background of the avatar button.
+  final Color avatarButtonBackgroundColor;
+
   /// Default constructor for this class;
   const AppBarTitle({
     Key? key,
     required this.onWebsiteButtonPressed,
     required this.websiteButtonBackgroundColor,
+    required this.onAvatarButtonPressed,
+    required this.avatarButtonBackgroundColor,
   }) : super(key: key);
 
   @override
@@ -27,12 +36,9 @@ class AppBarTitle extends StatelessWidget {
           onPressed: onWebsiteButtonPressed,
           backgroundColor: websiteButtonBackgroundColor,
         ),
-        CircleAvatar(
-          child: Container(
-            height: 64,
-            width: 64,
-            color: Colors.amber,
-          ),
+        AvatarButton(
+          backgroundColor: avatarButtonBackgroundColor,
+          onPressed: onAvatarButtonPressed,
         )
       ],
     );

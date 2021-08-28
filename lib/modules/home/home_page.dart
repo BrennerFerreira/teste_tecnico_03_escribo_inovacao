@@ -22,10 +22,15 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
           toolbarHeight: AppConstants.fullAppBarHeight,
           title: AppBarTitle(
+            websiteButtonBackgroundColor:
+                AppColors.accentColor.withOpacity(0.5),
+            avatarButtonBackgroundColor: AppColors.accentColor.withOpacity(0.5),
             onWebsiteButtonPressed: () {
               Navigator.of(context).pushNamed(RouteNames.websiteRoute);
             },
-            websiteButtonBackgroundColor: AppColors.accentColor,
+            onAvatarButtonPressed: () {
+              Navigator.of(context).pushNamed(RouteNames.avatarRoute);
+            },
           ),
           bottom: AppBarBottom(),
         ),

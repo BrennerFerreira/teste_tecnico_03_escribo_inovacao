@@ -8,4 +8,7 @@ class RouteNames {
 
   /// Route that leads to the app official website page.
   static const websiteRoute = '/website';
+
+  /// Route that leads to the app avatar page.
+  static const avatarRoute = '/avatar';
 }
