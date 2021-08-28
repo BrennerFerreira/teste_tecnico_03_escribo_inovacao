@@ -44,7 +44,12 @@ class _CharactersListState extends State<CharactersList>
                       return LoadingListTile();
                     }
 
-                    return BaseListTile(item: state.characters[index]);
+                    return BaseListTile(
+                      item: state.characters[index],
+                      invertFavoriteFunction: (item) {
+                        print(item);
+                      },
+                    );
                   },
                 ),
               );

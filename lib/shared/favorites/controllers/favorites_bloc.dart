@@ -20,6 +20,17 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
 
   final FavoritesServices _services;
 
+  /// Checks if the [favorites] list contains the item. It receives one
+  /// argument:
+  ///
+  /// [item]: the item to be checked.
+  ///
+  /// Returns: [true] if the list contains the [item] informed, [false]
+  /// otherwise.
+  bool favoritesContainsItem(StarWarsItem item) {
+    return state.favorites.any((element) => element.title == item.title);
+  }
+
   @override
   Stream<FavoritesState> mapEventToState(
     FavoritesEvent event,

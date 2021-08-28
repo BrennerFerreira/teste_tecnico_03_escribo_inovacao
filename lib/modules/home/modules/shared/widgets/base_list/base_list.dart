@@ -13,6 +13,9 @@ class BaseList extends StatelessWidget {
   /// The list to be displayed on the UI.
   final List<StarWarsItem> list;
 
+  /// The function that will be called when the favorite button is tapped.
+  final void Function(StarWarsItem)? invertFavoriteFunction;
+
   /// Used if there is need for a custom render of a list view.
   final ListView? listView;
 
@@ -21,6 +24,7 @@ class BaseList extends StatelessWidget {
     Key? key,
     required this.isLoading,
     required this.list,
+    this.invertFavoriteFunction,
     this.listView,
   }) : super(key: key);
 
@@ -41,7 +45,10 @@ class BaseList extends StatelessWidget {
           ListView.builder(
             itemCount: list.length,
             itemBuilder: (context, index) {
-              return BaseListTile(item: list[index]);
+              return BaseListTile(
+                item: list[index],
+                invertFavoriteFunction: invertFavoriteFunction,
+              );
             },
           ),
     );

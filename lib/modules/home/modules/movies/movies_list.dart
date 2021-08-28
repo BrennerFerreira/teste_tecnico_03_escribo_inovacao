@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../injection.dart';
+import '../../../../shared/movie/model/movie.dart';
 import '../shared/widgets/base_list/base_list.dart';
 import 'controllers/movies_bloc.dart';
 
@@ -26,6 +27,11 @@ class _MoviesListState extends State<MoviesList>
               return BaseList(
                 isLoading: state.isLoading,
                 list: state.movies,
+                invertFavoriteFunction: (movie) {
+                  context.read<MoviesBloc>().add(
+                        InvertFavoriteMoviesEvent(movie as Movie),
+                      );
+                },
               );
             },
           );
