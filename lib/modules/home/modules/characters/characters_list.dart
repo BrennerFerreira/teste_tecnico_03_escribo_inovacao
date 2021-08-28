@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:teste_tecnico_03_escribo_inovacao/injection.dart';
-import 'package:teste_tecnico_03_escribo_inovacao/modules/home/modules/characters/controllers/characters_bloc.dart';
-import 'package:teste_tecnico_03_escribo_inovacao/modules/home/modules/shared/widgets/base_list/base_list.dart';
+
+import '../../../../injection.dart';
+import '../shared/widgets/base_list/base_list.dart';
+import 'controllers/characters_bloc.dart';
 
 /// [CharactersList] is used as the [HomePage] scaffold body when the
 /// "Personagens" tab is selected.
-class CharactersList extends StatelessWidget {
+class CharactersList extends StatefulWidget {
+  @override
+  _CharactersListState createState() => _CharactersListState();
+}
+
+class _CharactersListState extends State<CharactersList>
+    with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return BlocProvider<CharactersBloc>(
       create: (context) => getIt<CharactersBloc>()
         ..add(
@@ -28,4 +36,7 @@ class CharactersList extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

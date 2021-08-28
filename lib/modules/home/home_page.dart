@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:teste_tecnico_03_escribo_inovacao/modules/home/modules/characters/characters_list.dart';
 
+import 'modules/characters/characters_list.dart';
 import 'modules/movies/movies_list.dart';
 import 'widgets/app_bar_bottom/app_bar_bottom.dart';
 import 'widgets/app_bar_title/app_bar_title.dart';
