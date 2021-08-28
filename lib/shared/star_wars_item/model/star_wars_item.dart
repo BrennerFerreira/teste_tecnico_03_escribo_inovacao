@@ -1,3 +1,5 @@
+import '../../constants/constants.dart';
+
 /// [ItemType] defines if the items is a movie or a character.
 enum ItemType {
   /// Defines an item of type movie.
@@ -27,4 +29,12 @@ abstract class StarWarsItem {
 
   /// [invertFavorite] inverts the favorite status of the item.
   StarWarsItem invertFavorite();
+
+  /// [toMap] converts the item to a map to be saved in the database.
+  Map<String, dynamic> toMap() {
+    return {
+      AppConstants.titleAttribute: title,
+      AppConstants.typeAttribute: type.toString(),
+    };
+  }
 }
