@@ -24,4 +24,7 @@ abstract class StarWarsItem {
     required this.type,
     required this.isFavorite,
   });
+
+  /// [invertFavorite] inverts the favorite status of the item.
+  StarWarsItem invertFavorite();
 }

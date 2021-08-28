@@ -50,4 +50,9 @@ class Character extends StarWarsItem {
   int get hashCode {
     return title.hashCode ^ type.hashCode ^ isFavorite.hashCode;
   }
+
+  @override
+  StarWarsItem invertFavorite() {
+    return Character(title: title, isFavorite: !isFavorite);
+  }
 }

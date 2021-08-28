@@ -50,4 +50,9 @@ class Movie extends StarWarsItem {
   int get hashCode {
     return title.hashCode ^ type.hashCode ^ isFavorite.hashCode;
   }
+
+  @override
+  StarWarsItem invertFavorite() {
+    return Movie(title: title, isFavorite: !isFavorite);
+  }
 }
