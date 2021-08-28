@@ -6,14 +6,14 @@ import 'package:webview_flutter/webview_flutter.dart';
 import '../../app/router/route_names.dart';
 import '../home/widgets/app_bar_title/app_bar_title.dart';
 
-/// [OficialWebistePage] is a page that contains a webview of the Star Wars
+/// [OfficialWebistePage] is a page that contains a webview of the Star Wars
 /// community website.
-class OficialWebsitePage extends StatefulWidget {
+class OfficialWebsitePage extends StatefulWidget {
   @override
-  _OficialWebsitePageState createState() => _OficialWebsitePageState();
+  _OfficialWebsitePageState createState() => _OfficialWebsitePageState();
 }
 
-class _OficialWebsitePageState extends State<OficialWebsitePage> {
+class _OfficialWebsitePageState extends State<OfficialWebsitePage> {
   @override
   void initState() {
     super.initState();
