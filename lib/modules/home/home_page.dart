@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:teste_tecnico_03_escribo_inovacao/modules/home/modules/favorites/favorites_list.dart';
 
 import '../../app/router/route_names.dart';
+import '../../shared/widgets/app_bar_title/app_bar_title.dart';
 import 'modules/characters/characters_list.dart';
 import 'modules/movies/movies_list.dart';
 import 'widgets/app_bar_bottom/app_bar_bottom.dart';
-import 'widgets/app_bar_title/app_bar_title.dart';
 
 /// [HomePage] is the app main page, which lists all movies, characters and
 /// user favorites.

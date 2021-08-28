@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import '../../app/router/route_names.dart';
-import '../home/widgets/app_bar_title/app_bar_title.dart';
+import '../../shared/widgets/app_bar_title/app_bar_title.dart';
 
 /// [OfficialWebistePage] is a page that contains a webview of the Star Wars
 /// community website.

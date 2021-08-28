@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../app/theme/app_text_styles.dart';
-import '../../../../../../shared/constants/constants.dart';
-import 'widgets/parallelogram_shape.dart';
+import '../../../../../app/theme/app_text_styles.dart';
+import '../../../../constants/constants.dart';
+import 'widgets/parallelogram_shape/parallelogram_shape.dart';
 
 /// [WebsiteButton] is the widget that is placed in the app AppBar that
 /// redirects to a web view of the Star Wars community website.
