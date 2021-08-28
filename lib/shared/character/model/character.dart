@@ -26,7 +26,8 @@ class Character extends StarWarsItem {
     }
 
     return Character(
-      title: map[AppConstants.nameAttribute] as String,
+      title: (map[AppConstants.nameAttribute] ??
+          map[AppConstants.titleAttribute]) as String,
       isFavorite: isFavorite,
     );
   }
