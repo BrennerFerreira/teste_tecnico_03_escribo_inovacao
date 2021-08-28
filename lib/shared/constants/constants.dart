@@ -18,4 +18,10 @@ class AppConstants {
 
   /// Redirects to the string 'results'
   static const resultsString = 'results';
+
+  /// Redirects to the string 'favoritesTable'
+  static const favoritesTable = 'favoritesTable';
+
+  /// Redirects to the string 'id'
+  static const idString = 'id';
 }
