@@ -7,8 +7,16 @@ class TileContainer extends StatelessWidget {
   /// The widget to be used inside this container. Usually, a [ListTile].
   final Widget child;
 
+  /// The background color to be used. If null [AppColors.backgroundColor]
+  /// is used.
+  final Color? backgroundColor;
+
   /// Default constructor for this class.
-  const TileContainer({Key? key, required this.child}) : super(key: key);
+  const TileContainer({
+    Key? key,
+    required this.child,
+    this.backgroundColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +24,12 @@ class TileContainer extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       margin: const EdgeInsets.symmetric(vertical: 4.0),
       decoration: BoxDecoration(
-        color: AppColors.backgroundColor,
+        color: backgroundColor ?? AppColors.backgroundColor,
         borderRadius: BorderRadius.circular(5),
         boxShadow: [
           BoxShadow(
-            color: AppColors.strokeColor.withOpacity(0.3),
+            color: backgroundColor?.withOpacity(0.5) ??
+                AppColors.strokeColor.withOpacity(0.3),
             offset: const Offset(1, 3),
             blurRadius: 8,
             spreadRadius: -3,

@@ -1,4 +1,6 @@
 import 'package:injectable/injectable.dart';
+import 'package:teste_tecnico_03_escribo_inovacao/shared/character/model/character.dart';
+import 'package:teste_tecnico_03_escribo_inovacao/shared/movie/model/movie.dart';
 
 import '../../constants/constants.dart';
 import '../../database/services/i_database_services.dart';
@@ -21,12 +23,20 @@ class FavoritesServices {
       tableName: AppConstants.favoritesTable,
     );
 
-    if (results != null) {
-      print(results);
-      return [];
-    } else {
+    if (results == null) {
       return null;
     }
+
+    final favoritesList = results.map((item) {
+      final itemTypeString = item[AppConstants.typeAttribute] as String;
+      if (itemTypeString == ItemType.movie.toString()) {
+        return Movie.fromMap(item).invertFavorite();
+      } else {
+        return Character.fromMap(item).invertFavorite();
+      }
+    }).toList();
+
+    return favoritesList;
   }
 
   /// [saveFavorite] received one argument:

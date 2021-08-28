@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:teste_tecnico_03_escribo_inovacao/modules/home/modules/favorites/favorites_list.dart';
 
 import '../../app/router/route_names.dart';
 import 'modules/characters/characters_list.dart';
@@ -30,7 +31,7 @@ class HomePage extends StatelessWidget {
           children: [
             MoviesList(),
             CharactersList(),
-            Container(color: Colors.green),
+            FavoritesList(),
           ],
         ),
       ),

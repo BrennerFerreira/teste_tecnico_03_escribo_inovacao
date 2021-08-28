@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:teste_tecnico_03_escribo_inovacao/shared/favorites/controllers/favorites_bloc.dart';
 
 import '../../../../../../app/theme/app_colors.dart';
 import '../../../../../../app/theme/app_text_styles.dart';
@@ -24,7 +26,17 @@ class BaseListTile extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         trailing: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            if (item.isFavorite) {
+              context.read<FavoritesBloc>().add(
+                    RemoveFavoritesEvent(item: item),
+                  );
+            } else {
+              context.read<FavoritesBloc>().add(
+                    SaveFavoritesEvent(item: item),
+                  );
+            }
+          },
           icon: Icon(
             item.isFavorite ? Icons.favorite : Icons.favorite_outline,
             color: AppColors.textColor,

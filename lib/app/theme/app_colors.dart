@@ -16,8 +16,8 @@ class AppColors {
   static const textColor = Color(0xFF100B0D);
 
   /// [greenColor] is the color used as green in the app.
-  static const greenColor = Color(0xFF35FF69);
+  static final greenColor = const Color(0xFF35FF69).withOpacity(0.8);
 
   /// [redColor] is the color used as red in the app.
-  static const redColor = Color(0xFFD62828);
+  static final redColor = const Color(0xFFD62828).withOpacity(0.8);
 }
