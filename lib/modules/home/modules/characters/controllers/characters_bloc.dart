@@ -31,5 +31,18 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
 
       yield FetchDoneCharactersState(characters: characters);
     }
+
+    if (event is NewPageRequestCharactersEvent) {
+      final newCharacters = await _services.getNewPageOfCharacters(
+        state._nextPage,
+      );
+
+      final newListOfCharacters = [...state.characters, ...newCharacters];
+
+      yield state.copyWith(
+        characters: newListOfCharacters,
+        currentApiPage: state._nextPage,
+      );
+    }
   }
 }

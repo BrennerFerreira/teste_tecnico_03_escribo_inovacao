@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../../../app/theme/app_colors.dart';
+import '../../../../../../app/theme/app_colors.dart';
 
 /// [TileContainer] is the widget that works as a background for the [MovieTile].
 class TileContainer extends StatelessWidget {

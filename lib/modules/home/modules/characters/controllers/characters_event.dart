@@ -4,6 +4,10 @@ part of 'characters_bloc.dart';
 @immutable
 abstract class CharactersEvent {}
 
-/// [FetchData] event is generated when it is necessary to retrieve data from
-/// the API.
+/// [FetchDataCharactersEvent] is generated when it is necessary to retrieve
+/// data from the API.
 class FetchDataCharactersEvent extends CharactersEvent {}
+
+/// [NewPageRequestCharactersEvent] is generated when it is necessary to
+/// retrieve a new page of characters data from the API.
+class NewPageRequestCharactersEvent extends CharactersEvent {}

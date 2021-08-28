@@ -8,4 +8,10 @@ abstract class ICharactersServices {
   /// Returns a list of [Character] if request is successful and an empty list
   /// otherwise.
   Future<List<Character>> getAllCharacters();
+
+  /// [getNewPageOfCharacters] should send a request to the API, returning a list
+  /// of characters from a new page.
+  /// Returns a list of [Character] if request is successful and an empty list
+  /// otherwise.
+  Future<List<Character>> getNewPageOfCharacters(int page);
 }

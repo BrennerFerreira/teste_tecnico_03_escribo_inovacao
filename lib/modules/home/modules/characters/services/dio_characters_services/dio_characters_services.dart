@@ -18,20 +18,42 @@ class DioCharactersServices implements ICharactersServices {
     _client = _config.client;
   }
 
+  Character _fromMapFunction(Map<String, dynamic> map) =>
+      Character.fromMap(map);
+
+  final String _baseUrl = 'people';
+
   @override
   Future<List<Character>> getAllCharacters() async {
-    Character fromMapFunction(Map<String, dynamic> map) =>
-        Character.fromMap(map);
-    const baseUrl = 'people';
-
     try {
-      final response = await _client.get(baseUrl);
+      final response = await _client.get(_baseUrl);
 
       final resultsString = response.data["results"];
 
       final charactersList = ConvertApiResponses.convertResponse<Character>(
         jsonList: resultsString as List,
-        fromMapFunction: fromMapFunction,
+        fromMapFunction: _fromMapFunction,
+      );
+
+      return charactersList;
+    } on DioError {
+      return [];
+    }
+  }
+
+  @override
+  Future<List<Character>> getNewPageOfCharacters(int page) async {
+    try {
+      final response = await _client.get(
+        _baseUrl,
+        queryParameters: {"page": page},
+      );
+
+      final resultsString = response.data["results"];
+
+      final charactersList = ConvertApiResponses.convertResponse<Character>(
+        jsonList: resultsString as List,
+        fromMapFunction: _fromMapFunction,
       );
 
       return charactersList;
