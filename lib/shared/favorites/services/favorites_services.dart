@@ -1,9 +1,9 @@
 import 'package:injectable/injectable.dart';
-import 'package:teste_tecnico_03_escribo_inovacao/shared/star_wars_item/models/character.dart';
-import 'package:teste_tecnico_03_escribo_inovacao/shared/star_wars_item/models/movie.dart';
 
 import '../../constants/constants.dart';
 import '../../database/services/i_database_services.dart';
+import '../../star_wars_item/models/character.dart';
+import '../../star_wars_item/models/movie.dart';
 import '../../star_wars_item/models/star_wars_item.dart';
 
 /// [FavoritesServices] is the connection between [FavoritesBloc] and the

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:teste_tecnico_03_escribo_inovacao/shared/avatar/controllers/avatar_bloc.dart';
 
 import '../injection.dart';
+import '../shared/avatar/controllers/avatar_bloc.dart';
 import '../shared/favorites/controllers/favorites_bloc.dart';
 import 'router/app_routes.dart';
 import 'theme/app_theme.dart';

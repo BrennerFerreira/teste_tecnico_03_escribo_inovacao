@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttermoji/fluttermoji.dart';
-import 'package:teste_tecnico_03_escribo_inovacao/shared/avatar/controllers/avatar_bloc.dart';
-import 'package:teste_tecnico_03_escribo_inovacao/shared/widgets/app_bar_title/widgets/avatar_button/widgets/avatar_container/avatar_container.dart';
+
+import '../../../../avatar/controllers/avatar_bloc.dart';
+import 'widgets/avatar_container/avatar_container.dart';
 
 /// [AvatarButton] is the widget that is placed in the app AppBar that
 /// redirects to the avatar choice page.

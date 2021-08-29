@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:teste_tecnico_03_escribo_inovacao/shared/constants/constants.dart';
 
 import '../../../../app/theme/app_text_styles.dart';
+import '../../../../shared/constants/constants.dart';
 
 /// [AppBarBottom] is a widget to show the tabs in the [HomePage] app bar.
 class AppBarBottom extends StatelessWidget implements PreferredSizeWidget {

@@ -1,11 +1,11 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:teste_tecnico_03_escribo_inovacao/app/theme/app_colors.dart';
-import 'package:teste_tecnico_03_escribo_inovacao/shared/constants/constants.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import '../../app/router/route_names.dart';
+import '../../app/theme/app_colors.dart';
+import '../../shared/constants/constants.dart';
 import '../../shared/widgets/app_bar_title/app_bar_title.dart';
 
 /// [OfficialWebistePage] is a page that contains a webview of the Star Wars
