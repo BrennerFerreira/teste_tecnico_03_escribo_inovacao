@@ -16,19 +16,10 @@ class Character extends StarWarsItem {
   /// [Character] constructor from a map with the correct keys.
   /// Returns a new [Character] instance each time.
   factory Character.fromMap(Map<String, dynamic> map) {
-    late bool isFavorite;
-
-    if (map[AppConstants.isFavoriteAttribute] == null ||
-        map[AppConstants.isFavoriteAttribute] == 'false') {
-      isFavorite = false;
-    } else {
-      isFavorite = true;
-    }
-
     return Character(
       title: (map[AppConstants.nameAttribute] ??
           map[AppConstants.titleAttribute]) as String,
-      isFavorite: isFavorite,
+      isFavorite: false,
     );
   }
 

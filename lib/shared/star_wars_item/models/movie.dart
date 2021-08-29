@@ -16,18 +16,9 @@ class Movie extends StarWarsItem {
   /// [Movie] constructor from a map with the correct keys.
   /// Returns a new [Movie] instance each time.
   factory Movie.fromMap(Map<String, dynamic> map) {
-    late bool isFavorite;
-
-    if (map[AppConstants.isFavoriteAttribute] == null ||
-        map[AppConstants.isFavoriteAttribute] == 'false') {
-      isFavorite = false;
-    } else {
-      isFavorite = true;
-    }
-
     return Movie(
       title: map[AppConstants.titleAttribute] as String,
-      isFavorite: isFavorite,
+      isFavorite: false,
     );
   }
 
