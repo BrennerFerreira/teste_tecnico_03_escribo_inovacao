@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Star Wars App',
         theme: AppTheme.theme,
         routes: AppRoutes.routes,

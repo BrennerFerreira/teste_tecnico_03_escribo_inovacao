@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.teste_tecnico_03_escribo_inovacao">
    <application
-        android:label="teste_tecnico_03_escribo_inovacao"
+        android:label="Favoritos Star Wars"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
