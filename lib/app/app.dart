@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../injection.dart';
 import '../shared/avatar/controllers/avatar_bloc.dart';
+import '../shared/constants/constants.dart';
 import '../shared/favorites/controllers/favorites_bloc.dart';
 import 'router/app_routes.dart';
 import 'theme/app_theme.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Star Wars App',
+        title: AppConstants.appTitle,
         theme: AppTheme.theme,
         routes: AppRoutes.routes,
       ),

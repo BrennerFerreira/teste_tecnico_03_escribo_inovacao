@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../../../../shared/constants/constants.dart';
 import '../../../../../../shared/star_wars_item/models/character.dart';
 import '../../../shared/dio_config/dio_config.dart';
 import '../../../shared/services/convert_api_response.dart';
@@ -21,14 +22,12 @@ class DioCharactersServices implements ICharactersServices {
   Character _fromMapFunction(Map<String, dynamic> map) =>
       Character.fromMap(map);
 
-  final String _baseUrl = 'people';
-
   @override
   Future<List<Character>> getAllCharacters() async {
     try {
-      final response = await _client.get(_baseUrl);
+      final response = await _client.get(AppConstants.charactersBaseUrl);
 
-      final resultsString = response.data["results"];
+      final resultsString = response.data[AppConstants.resultsString];
 
       final charactersList = ConvertApiResponses.convertResponse<Character>(
         jsonList: resultsString as List,
@@ -45,11 +44,11 @@ class DioCharactersServices implements ICharactersServices {
   Future<List<Character>> getNewPageOfCharacters(int page) async {
     try {
       final response = await _client.get(
-        _baseUrl,
-        queryParameters: {"page": page},
+        AppConstants.charactersBaseUrl,
+        queryParameters: {AppConstants.pageString: page},
       );
 
-      final resultsString = response.data["results"];
+      final resultsString = response.data[AppConstants.resultsString];
 
       final charactersList = ConvertApiResponses.convertResponse<Character>(
         jsonList: resultsString as List,

@@ -22,10 +22,8 @@ class AppDatabase {
   Future<Database> get db async => _db ?? await _initDb();
 
   Future<Database> _initDb() async {
-    const databasePath = "./star_wars_app.db";
-
     return openDatabase(
-      databasePath,
+      AppConstants.databasePath,
       version: 1,
       onCreate: (Database db, int newerVersion) async {
         await db.execute(

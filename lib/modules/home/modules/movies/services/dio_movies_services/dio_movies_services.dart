@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../../../../shared/constants/constants.dart';
 import '../../../../../../shared/star_wars_item/models/movie.dart';
 import '../../../shared/dio_config/dio_config.dart';
 import '../../../shared/services/convert_api_response.dart';
@@ -22,11 +23,10 @@ class DioMoviesServices implements IMoviesServices {
   @override
   Future<List<Movie>> getAllMovies() async {
     Movie fromMapFunction(Map<String, dynamic> map) => Movie.fromMap(map);
-    const moviesPath = 'films';
     try {
-      final response = await _client.get(moviesPath);
+      final response = await _client.get(AppConstants.moviesBaseUrl);
 
-      final resultsString = response.data["results"];
+      final resultsString = response.data[AppConstants.resultsString];
 
       final moviesList = ConvertApiResponses.convertResponse<Movie>(
         jsonList: resultsString as List,

@@ -67,7 +67,7 @@ class _AvatarPageState extends State<AvatarPage> {
               backgroundColor: AppColors.accentColor.withOpacity(0.5),
             ),
             FluttermojiCustomizer(
-              outerTitleText: "Customize seu avatar:",
+              outerTitleText: AppConstants.avatarSelectionTitle,
             ),
           ],
         ),

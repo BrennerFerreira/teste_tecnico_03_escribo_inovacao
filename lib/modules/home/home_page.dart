@@ -14,10 +14,8 @@ import 'widgets/app_bar_bottom/app_bar_bottom.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    const totalTabs = 3;
-
     return DefaultTabController(
-      length: totalTabs,
+      length: AppConstants.homePageTabsQuantity,
       child: Scaffold(
         appBar: AppBar(
           toolbarHeight: AppConstants.fullAppBarHeight,

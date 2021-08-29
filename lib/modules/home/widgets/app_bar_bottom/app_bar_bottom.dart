@@ -11,21 +11,21 @@ class AppBarBottom extends StatelessWidget implements PreferredSizeWidget {
       tabs: [
         Tab(
           child: Text(
-            "Filmes",
+            AppConstants.moviesTabTitle,
             style: AppTextStyles.appBarTextRegular,
             textAlign: TextAlign.center,
           ),
         ),
         Tab(
           child: Text(
-            "Personagens",
+            AppConstants.charactersTabTitle,
             style: AppTextStyles.appBarTextRegular,
             textAlign: TextAlign.center,
           ),
         ),
         Tab(
           child: Text(
-            "Favoritos",
+            AppConstants.favoritesTabTitle,
             style: AppTextStyles.appBarTextRegular,
             textAlign: TextAlign.center,
           ),

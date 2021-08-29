@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../../app/theme/app_text_styles.dart';
+import '../../../../../../shared/constants/constants.dart';
 
 /// Widget used as body when favorites list is empty.
 class EmptyListWidget extends StatelessWidget {
@@ -8,7 +9,7 @@ class EmptyListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(
       child: Text(
-        "Nenhum item foi marcado como favorito!",
+        AppConstants.emptyFavoritesText,
         style: AppTextStyles.textRegular,
         textAlign: TextAlign.center,
       ),

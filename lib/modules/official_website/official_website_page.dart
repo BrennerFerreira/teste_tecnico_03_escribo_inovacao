@@ -28,8 +28,6 @@ class _OfficialWebsitePageState extends State<OfficialWebsitePage> {
 
   @override
   Widget build(BuildContext context) {
-    const websiteUrl = 'https://www.starwars.com/community';
-
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: AppConstants.smallAppBarHeight,
@@ -52,7 +50,7 @@ class _OfficialWebsitePageState extends State<OfficialWebsitePage> {
           if (_isLoading) const LinearProgressIndicator(),
           Expanded(
             child: WebView(
-              initialUrl: websiteUrl,
+              initialUrl: AppConstants.communityWebsiteUrl,
               onPageStarted: (_) {
                 setState(() {
                   _isLoading = true;
