@@ -22,8 +22,14 @@ class AppConstants {
   /// Redirects to the string 'favoritesTable'
   static const favoritesTable = 'favoritesTable';
 
+  /// Redirects to the string 'avatarTable'
+  static const avatarTable = 'avatarTable';
+
   /// Redirects to the string 'id'
   static const idString = 'id';
+
+  /// Redirects to the string 'config'
+  static const configString = 'config';
 
   /// Redirects to the double 144.0;
   static const fullAppBarHeight = 144.0;

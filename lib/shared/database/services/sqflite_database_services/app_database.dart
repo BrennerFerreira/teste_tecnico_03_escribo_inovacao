@@ -37,6 +37,15 @@ class AppDatabase {
           )
           ''',
         );
+
+        await db.execute(
+          '''
+          CREATE TABLE ${AppConstants.avatarTable} (
+            ${AppConstants.idString} INTEGER PRIMARY KEY AUTOINCREMENT,
+            ${AppConstants.configString} TEXT
+          )
+          ''',
+        );
       },
     );
   }

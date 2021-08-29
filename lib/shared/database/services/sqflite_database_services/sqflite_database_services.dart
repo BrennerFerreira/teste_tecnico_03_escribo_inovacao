@@ -61,4 +61,17 @@ class SqfliteDatabaseServices implements IDatabaseServices {
       return null;
     }
   }
+
+  @override
+  Future<bool> removeAllData({required String tableName}) async {
+    try {
+      final database = await _database();
+
+      await database.delete(tableName);
+
+      return true;
+    } on Exception {
+      return false;
+    }
+  }
 }

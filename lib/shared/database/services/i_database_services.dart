@@ -34,4 +34,14 @@ abstract class IDatabaseServices {
   Future<List<Map<String, dynamic>>?> getAllData({
     required String tableName,
   });
+
+  /// [removeAllData] receive one arguments:
+  ///
+  /// [tableName]: a string with the table name where to retrieve the data.
+  ///
+  /// Returns: a [true] if all elements of the table were successfully removed
+  /// and [false]  otherwise.
+  Future<bool> removeAllData({
+    required String tableName,
+  });
 }
